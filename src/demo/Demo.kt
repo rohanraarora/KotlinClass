@@ -38,13 +38,13 @@ fun main(args: Array<String>){
 //
 //    var map: HashMap<Int,String>
 
-    var user: User = User(name = "abc")
-    user.age = 10
+//    var user: User = User(name = "abc")
+//    user.age = 10
     //user.print()
 
 
 
-    var student = Student("abc",1,10)
+//    var student = Student("abc",1,10)
     //student.print()
 
 
@@ -59,18 +59,29 @@ fun main(args: Array<String>){
 //        user.rollNo
 //    }
 
+//
+//    var b = 10 add 3
+//
+//    var kMovie: KMovie = KMovie("abc",10)
+//    var jMovie: JMovie = JMovie("xyz",4)
+//
+//    var teacher = Teacher.getInstance()
+//
+//    var a = 10.multiplyFive()
+//    println("A: $a")
 
-    var b = 10 add 3
 
-    var kMovie: KMovie = KMovie("abc",10)
-    var jMovie: JMovie = JMovie("xyz",4)
+    var user: User? = User("abc",10)
+//    if(user != null){
+//        user.email = "ABC@gmail.com"
+//        println(user.email)
+//    }
 
-    var teacher = Teacher.getInstance()
-
-    var a = 10.multiplyFive()
-    println("A: $a")
+    var name:String = user!!.email
 
 
+
+    user = null
 
 
 
@@ -89,6 +100,14 @@ fun printName(name: String){
 fun factorial(n: Long): Long = if(n == 1L) 1  else n * factorial(n-1)
 
 open class User(val name: String,var age: Int ) {
+
+    var email: String = ""
+    set(value){
+        field = value.toLowerCase()
+    }
+    get(){
+        return field.toUpperCase()
+    }
 
     constructor(name: String): this(name,0)
 
